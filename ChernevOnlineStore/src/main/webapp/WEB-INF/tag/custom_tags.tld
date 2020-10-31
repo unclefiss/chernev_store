@@ -1,0 +1,72 @@
+<taglib>
+    <tlib-version>1.0</tlib-version>
+    <jsp-version>2.0</jsp-version>
+    <short-name>Tags tld</short-name>
+
+    <function>
+        <name>contains</name>
+        <function-class>com.epam.chernev.tag.ContainsFunction</function-class>
+        <function-signature>boolean contains(java.util.List,java.lang.Object)
+        </function-signature>
+    </function>
+
+    <tag>
+        <name>login</name>
+        <tag-class>com.epam.chernev.tag.LoginTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>user</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>pagination</name>
+        <tag-class>com.epam.chernev.tag.PaginationTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>pages</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>currentPage</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>locale</name>
+        <tag-class>com.epam.chernev.tag.LocaleStatusTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>locale</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>collection</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>id</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
+    <tag>
+        <name>getLocale</name>
+        <tag-class>com.epam.chernev.tag.GetLocaleStorageTag</tag-class>
+        <body-content>empty</body-content>
+        <attribute>
+            <name>name</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+
+</taglib>

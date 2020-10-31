@@ -1,0 +1,110 @@
+<header class="site-navbar" role="banner">
+    <div class="site-navbar-top">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-6 col-md-4 order-2 order-md-1 site-search-icon text-left">
+                    <form action="/ChernevOnlineStore/shop" class="site-block-top-search">
+                        <span class="icon icon-search2"></span>
+                        <input type="text" name="name" class="form-control border-0" placeholder=
+                        <fmt:message key="header.search"/>
+                        >
+                    </form>
+                </div>
+                <div class="col-12  mb-md-0 col-md-4 order-1 order-md-2 text-center">
+                    <div class="site-logo">
+                        <a href="index.jsp" class="js-logo-clone"> Chernev </a>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 order-3 order-md-3 text-right">
+                    <div class="site-top-icons text-right">
+                        <ul>
+                            <li><a href="/ChernevOnlineStore/cabinet.jsp"><span class="icon icon-person"></span></a>
+                            </li>
+                            <li><a href="#"><span class="icon icon-heart-o"></span></a></li>
+                            <li>
+                                <a href="/ChernevOnlineStore/cart.jsp" class="site-cart">
+                                    <span class="icon icon-shopping_cart"></span>
+                                    <span class="count">${count}</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class=" border-top border-bottom">
+        <div class="row">
+            <div class="col-md-4 mt-2">
+                <form>
+                    <div class="row">
+                        <div for="locale" class="col-md-4 ml-2 font-weight-normal text-black my-auto">
+                            <fmt:message key="header.language"/>
+                            :
+                        </div>
+                        <div class="col-md-7">
+                            <select name="lang"
+                                    onchange="window.location.replace(window.location.href); this.form.submit(); "
+                                    class="form-control" id="locale">
+                                <option value=${locale}>
+                                    <fmt:message key="header.default"/>
+                                    (${locale})
+                                </option>
+                                <option value="ru">RU</option>
+                                <option value="en">EN</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <c:if test="${empty user}">
+                <div class="col-md-8 text-right d-none d-md-block">
+                    <a class="text-light mr-2 my-2 text-center btn btn-primary " href="/ChernevOnlineStore/login">
+                        <fmt:message key="header.log_in"/>
+                    </a>
+                    <a class="text-light my-2 text-center btn btn-primary " href="/ChernevOnlineStore/registration">
+                        <fmt:message key="header.registration"/>
+                    </a>
+                </div>
+            </c:if>
+            <c:if test="${not empty user}">
+                <div class="col-md-8 text-right d-none d-md-block">
+                    <img class="rounded my-2" style="width:40px; height:40px; object-fit:cover" alt="userpic"
+                         src="${user.userPicturePath}">
+
+                    <big> <span class="text-dark mt-3"> <fmt:message key="header.hello"/>,
+         ${user.firstName} ${user.lastName}! </span></big>
+                    <a class="text-light mr-2 my-2 text-center btn btn-primary "
+                       href="/ChernevOnlineStore/logout"><fmt:message key="header.log_out"/></a>
+
+                </div>
+            </c:if>
+        </div>
+    </div>
+    <nav class="site-navigation text-right  text-md-center" role="navigation">
+        <div class="container">
+            <ul class="site-menu js-clone-nav d-none d-md-block">
+                <li class="active">
+                    <a href="index.jsp">
+                        <fmt:message key="header.home"/>
+                    </a>
+                </li>
+                <li>
+                    <a href="/ChernevOnlineStore/shop">
+                        <fmt:message key="header.shop"/>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <fmt:message key="header.catalogue"/>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <fmt:message key="header.new_arrivals"/>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,41 @@
+<%@ include file="/WEB-INF/jspf/page.jspf" %>
+<%@ include file="/WEB-INF/jspf/taglib.jspf" %>
+
+
+<c:if test="${initParam['localeStorageName'] == 'session'}">
+    <c:set var="locale" value="${langSession}"/>
+</c:if>
+<c:if test="${initParam['localeStorageName'] == 'cookie'}">
+    <c:set var="locale" value="${cookie['langCookie'].getValue()}"/>
+</c:if>
+<c:if test="${not empty param.lang}">
+    <c:set var="locale" value="${param.lang}"/>
+</c:if>
+
+<fmt:setLocale value="${locale}"/>
+<fmt:setBundle basename="chernev"/>
+
+<head>
+    <title>Chernev</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mukta:300,400,700">
+    <link rel="stylesheet" href="static/shoppers/fonts/icomoon/style.css">
+
+    <link rel="stylesheet" href="static/shoppers/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/shoppers/css/magnific-popup.css">
+    <link rel="stylesheet" href="static/shoppers/css/jquery-ui.css">
+    <link rel="stylesheet" href="static/shoppers/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="static/shoppers/css/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="static/shoppers/css/validation.css">
+
+
+    <link rel="stylesheet" href="static/shoppers/css/aos.css">
+
+    <link rel="stylesheet" href="static/shoppers/css/style.css">
+
+    <link rel="stylesheet" href="static/shoppers/css/modal-window.css">
+
+</head>

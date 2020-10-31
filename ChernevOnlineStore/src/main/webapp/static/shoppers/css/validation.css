@@ -1,0 +1,51 @@
+input[type="text"],
+input[type="tel"],
+input[type="password"],
+input[type="email"] {
+    display: block;
+    padding: 0 17px;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    color: #000;
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, .11);
+    border-radius: 3px;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.some-form__line {
+}
+
+.some-form__line-required input[type="text"],
+.some-form__line-required input[type="tel"],
+.some-form__line-required input[type="password"],
+.some-form__line-required input[type="checkbox"],
+.some-form__line-required input[type="email"] {
+    border-color: #f45a57;
+}
+
+.some-form__line-required .some-form__hint {
+    opacity: 1;
+    z-index: auto;
+}
+
+.some-form__hint {
+    z-index: -1;
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: -6px;
+    padding: 0 12px;
+    width: 100%;
+    background: #f45a57;
+    color: #fff;
+    font-size: 12px;
+    line-height: 1.333333;
+    -webkit-transition: all .3s ease;
+    -o-transition: all .3s ease;
+    transition: all .3s ease;
+}

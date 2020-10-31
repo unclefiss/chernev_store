@@ -1,0 +1,19 @@
+<script src="static/shoppers/js/jquery-3.3.1.min.js"></script>
+<script src="static/shoppers/js/jquery-ui.js"></script>
+<script src="static/shoppers/js/popper.min.js"></script>
+<script src="static/shoppers/js/bootstrap.min.js"></script>
+<script src="static/shoppers/js/owl.carousel.min.js"></script>
+<script src="static/shoppers/js/jquery.magnific-popup.min.js"></script>
+<script src="static/shoppers/js/aos.js"></script>
+
+<script src="static/shoppers/js/jquery-validation.js"></script>
+<script src="static/shoppers/js/filename.js"></script>
+
+<script src="static/shoppers/js/main.js"></script>
+
+<script src="static/shoppers/js/ajax/addToCart.js"></script>
+<script src="static/shoppers/js/ajax/incCount.js"></script>
+<script src="static/shoppers/js/ajax/decCount.js"></script>
+<script src="static/shoppers/js/ajax/setCount.js"></script>
+<script src="static/shoppers/js/ajax/deleteProduct.js"></script>
+<script src="static/shoppers/js/ajax/totalAmount.js"></script>
