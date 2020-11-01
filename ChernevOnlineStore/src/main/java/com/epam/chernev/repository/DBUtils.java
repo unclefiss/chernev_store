@@ -18,7 +18,9 @@ public class DBUtils {
             log.info("Start creating connection");
             String username = "root";
             String password = "1111";
-            String url = "jdbc:mysql://127.0.0.1:3306/";
+            String url = "jdbc:mysql://127.0.0.1:3306/" +
+                    "chernevonlinestore?useUnicode=true&useJDBCCompliantTimezoneShift=true" +
+                    "&useLegacyDatetimeCode=false&serverTimezone=UTC";
             Class.forName("com.mysql.cj.jdbc.Driver");
             return DriverManager.getConnection(url, username, password);
         } catch (ClassNotFoundException | SQLException e) {
