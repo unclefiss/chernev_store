@@ -3,10 +3,10 @@
 
 
 <c:if test="${initParam['localeStorageName'] == 'session'}">
-    <c:set var="locale" value="${langSession}"/>
+    <c:set var="locale" scope="session" value="${langSession}"/>
 </c:if>
 <c:if test="${initParam['localeStorageName'] == 'cookie'}">
-    <c:set var="locale" value="${cookie['langCookie'].getValue()}"/>
+    <c:set var="locale" value="${cookie['langCookie'].value}"/>
 </c:if>
 <c:if test="${not empty param.lang}">
     <c:set var="locale" value="${param.lang}"/>

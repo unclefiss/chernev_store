@@ -51,7 +51,7 @@ public class LocaleFilter implements Filter {
                 localeRequestWrapper = new LocaleRequestWrapper(req, new Locale(localeStorage.getLocale(req)));
             } else {
                 log.info("Set most suitable locale for web-application");
-                localeStorage.setLocale(req, resp, req.getParameter(LocaleFilterConstants.LANG_REQUEST_PARAMETER));
+                localeStorage.setLocale(req, resp, chooseLocale(req).toString());
             }
         }
         chain.doFilter(localeRequestWrapper, resp);

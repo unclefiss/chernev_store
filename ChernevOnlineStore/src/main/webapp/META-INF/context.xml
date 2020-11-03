@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+    <!-- Specify a JDBC datasource -->
+    <Resource name="jdbc/chernev"
+              global="jdbc/chernev"
+              auth="Container"
+              type="javax.sql.DataSource"
+              username="root"
+              password="1111"
+              driverClassName="com.mysql.cj.jdbc.Driver"
+              url="jdbc:mysql://127.0.0.1:3306/chernevonlinestore?useUnicode=true&amp;
+                useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;
+                serverTimezone=UTC&amp;autoReconnect=true"
+              maxActive="100"
+              maxIdle="30"
+              maxWait="10000"/>
+</Context>

@@ -31,4 +31,13 @@ public class Status {
     public void setNameRu(String nameRu) {
         this.nameRu = nameRu;
     }
+
+    @Override
+    public String toString() {
+        return "Status{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", nameRu='" + nameRu + '\'' +
+                '}';
+    }
 }

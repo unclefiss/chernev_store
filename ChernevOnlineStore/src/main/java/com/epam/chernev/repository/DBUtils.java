@@ -1,7 +1,10 @@
 package com.epam.chernev.repository;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.sql.DataSource;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.logging.Logger;
 
@@ -14,26 +17,16 @@ public class DBUtils {
     }
 
     public static Connection getConnection() {
+        Context ctx;
+        Connection c = null;
         try {
-            log.info("Start creating connection");
-            String username = "root";
-            String password = "1111";
-            String url = "jdbc:mysql://127.0.0.1:3306/" +
-                    "chernevonlinestore?useUnicode=true&useJDBCCompliantTimezoneShift=true" +
-                    "&useLegacyDatetimeCode=false&serverTimezone=UTC";
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            return DriverManager.getConnection(url, username, password);
-        } catch (ClassNotFoundException | SQLException e) {
+            ctx = new InitialContext();
+            DataSource ds = (DataSource) ctx.lookup("java:comp/env/jdbc/chernev");
+            c = ds.getConnection();
+        } catch (NamingException | SQLException e) {
             log.warning(e.getMessage());
         }
-        return null;
+        return c;
     }
 
-    public static void closeConnection(Connection con) {
-        try {
-            con.close();
-        } catch (SQLException throwables) {
-            log.warning(throwables.getMessage());
-        }
-    }
 }

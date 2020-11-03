@@ -7,7 +7,7 @@
 <div class="site-wrap">
     <%@ include file="/WEB-INF/jspf/header.jspf" %>
 
-    <div class="site-blocks-cover" style="background-image: url(images/hero_1.jpg);">
+    <div class="site-blocks-cover" style="background-image: url(./images/hero_1.jpg);">
         <div class="container">
             <div class="row align-items-start align-items-md-center justify-content-end">
                 <div class="col-md-5 text-center text-md-left pt-5 pt-md-0">

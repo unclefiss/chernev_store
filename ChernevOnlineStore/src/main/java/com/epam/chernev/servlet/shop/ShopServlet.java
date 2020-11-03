@@ -7,6 +7,7 @@ import com.epam.chernev.constants.Constants;
 import com.epam.chernev.constants.Paths;
 import com.epam.chernev.exception.RepositoryException;
 import com.epam.chernev.model.Product;
+import com.epam.chernev.model.Status;
 import com.epam.chernev.service.ProductService;
 import com.epam.chernev.service.StatusService;
 
